@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Activity, ArrowUp, BookOpen, HeartPulse, Info, Menu, MessageCircle, RotateCcw, ShieldCheck, Sparkles, Stethoscope, Trash2, X } from "lucide-react";
 
 type Message = { id: string; role: "assistant" | "user"; content: string; time: string };
@@ -16,7 +16,7 @@ const starterPrompts = [
 function answerFor(input: string, prefs: Preferences) {
   const q = input.toLocaleLowerCase("fr");
   const urgent = /(douleur.*poitrine|difficulté.*respir|respire.*pas|perte de connaissance|convulsion|hémorragie|saignement abondant|suicide|intoxication|visage.*paralys|faiblesse.*brutale)/i.test(q);
-  if (urgent) return "Ce que vous décrivez peut nécessiter une aide médicale immédiate. Contactez sans attendre les services d'urgence de votre pays ou rendez-vous au service d'urgence le plus proche. Si possible, demandez à une personne de confiance de rester avec vous. Je ne peux pas évaluer une urgence à distance.";
+  if (urgent) return "Ce que vous décrivez peut nécessiter une aide médicale immédiate. Contactez sans attendre les services d&apos;urgence de votre pays ou rendez-vous au service d'urgence le plus proche. Si possible, demandez à une personne de confiance de rester avec vous. Je ne peux pas évaluer une urgence à distance.";
   if (/(bonjour|salut|bonsoir|coucou|hello)/i.test(q)) return "Bonjour et bienvenue sur SANTÉ+ ! Je peux vous aider à comprendre des sujets de santé, de prévention, d'hygiène et de nutrition. Que souhaitez-vous savoir ?";
   if (/(paludisme|malaria)/i.test(q)) return "Le paludisme est une maladie causée par des parasites du genre Plasmodium, transmis à l'être humain par la piqûre de moustiques Anopheles infectés. Les manifestations possibles comprennent la fièvre, les frissons, les maux de tête et une grande fatigue. Une fièvre après un séjour dans une zone où le paludisme circule doit conduire à consulter rapidement : un test est nécessaire pour confirmer la maladie. Les formes graves constituent une urgence.";
   if (/(grippe|influenza|symptôme.*rhume|rhume)/i.test(q)) return "La grippe est une infection respiratoire virale. Elle peut provoquer une fièvre d'apparition rapide, une toux, des courbatures, des maux de tête et une fatigue marquée. Le rhume est généralement plus progressif et souvent moins intense. Consultez un professionnel si les symptômes sont importants, persistent ou s'aggravent, et demandez une aide urgente en cas de difficulté respiratoire.";
@@ -62,7 +62,7 @@ export default function Home() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, prefs, mounted]);
 
-  const greeting = useMemo(() => prefs.displayName.trim() ? `Bonjour ${prefs.displayName.trim()} !` : "Bonjour !");
+  const greeting = prefs.displayName.trim() ? `Bonjour ${prefs.displayName.trim()} !` : "Bonjour !";
   function send(text = input) {
     const value = text.trim();
     if (!value) return;
@@ -98,7 +98,7 @@ export default function Home() {
       <section className="workspace">
         <header className="topbar">
           <div className="mobile-brand"><span className="brand-mark"><Activity size={19}/></span><strong>SANTÉ<span>+</span></strong></div>
-          <div className="top-context"><span className="status-dot"/> Assistant d'information santé <span className="top-divider">/</span> <span className="muted">Français</span></div>
+          <div className="top-context"><span className="status-dot"/> Assistant d&apos;information santé <span className="top-divider">/</span> <span className="muted">Français</span></div>
           <div className="top-actions">
             <span className="safe-label"><ShieldCheck size={15}/> Espace informatif</span>
             <button className="icon-button" title="Nouvelle conversation" onClick={reset}><RotateCcw size={17}/></button>
@@ -109,7 +109,7 @@ export default function Home() {
         <div className="chat-area">
           <div className="chat-inner">
             <div className="intro">
-              <div className="eyebrow"><Sparkles size={14}/> VOTRE COMPAGNON D'INFORMATION SANTÉ</div>
+              <div className="eyebrow"><Sparkles size={14}/> VOTRE COMPAGNON D&apos;INFORMATION SANTÉ</div>
               <h1>Votre santé mérite<br/><span>des réponses claires.</span></h1>
               <p>Posez vos questions et découvrez des informations simples pour mieux comprendre la santé au quotidien.</p>
             </div>
@@ -124,7 +124,7 @@ export default function Home() {
             )}
 
             <div className="messages">
-              {messages.map((m, i) => <article className={`message-row ${m.role}`} key={m.id}>
+              {messages.map((m) => <article className={`message-row ${m.role}`} key={m.id}>
                 {m.role === "assistant" ? <div className="message-avatar"><Activity size={17}/></div> : <div className="user-avatar">V</div>}
                 <div className="message-content"><div className="message-meta"><strong>{m.role === "assistant" ? "SANTÉ+" : "Vous"}</strong><time>{m.time}</time></div><div className="bubble">{m.content}</div></div>
               </article>)}
@@ -140,12 +140,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <footer className="footer"><span>© 2026 SANTÉ+ · Assistant d'information santé</span><button onClick={() => setShowAbout(true)}>Limites et sécurité</button></footer>
+        <footer className="footer"><span>© 2026 SANTÉ+ · Assistant d&apos;information santé</span><button onClick={() => setShowAbout(true)}>Limites et sécurité</button></footer>
       </section>
 
-      {menuOpen && <div className="modal-backdrop" onClick={() => setMenuOpen(false)}><section className="settings-modal" onClick={e => e.stopPropagation()}><div className="modal-head"><div><span className="eyebrow">PERSONNALISATION</span><h2>Vos préférences</h2></div><button className="icon-button" onClick={() => setMenuOpen(false)}><X size={18}/></button></div><label className="field-label">Comment souhaitez-vous être appelé ?<input value={prefs.displayName} onChange={e => setPrefs(p => ({...p, displayName:e.target.value.slice(0,40)}))} placeholder="Votre prénom (facultatif)"/></label><label className="toggle-row"><span><strong>Réponses plus courtes</strong><small>Privilégier les explications concises.</small></span><input type="checkbox" checked={prefs.concise} onChange={e => setPrefs(p => ({...p, concise:e.target.checked}))}/></label><button className="danger-button" onClick={reset}><Trash2 size={16}/> Effacer la conversation</button><p className="modal-note">Les préférences et l'historique de démonstration sont enregistrés uniquement dans le stockage local de ce navigateur.</p></section></div>}
+      {menuOpen && <div className="modal-backdrop" onClick={() => setMenuOpen(false)}><section className="settings-modal" onClick={e => e.stopPropagation()}><div className="modal-head"><div><span className="eyebrow">PERSONNALISATION</span><h2>Vos préférences</h2></div><button className="icon-button" onClick={() => setMenuOpen(false)}><X size={18}/></button></div><label className="field-label">Comment souhaitez-vous être appelé ?<input value={prefs.displayName} onChange={e => setPrefs(p => ({...p, displayName:e.target.value.slice(0,40)}))} placeholder="Votre prénom (facultatif)"/></label><label className="toggle-row"><span><strong>Réponses plus courtes</strong><small>Privilégier les explications concises.</small></span><input type="checkbox" checked={prefs.concise} onChange={e => setPrefs(p => ({...p, concise:e.target.checked}))}/></label><button className="danger-button" onClick={reset}><Trash2 size={16}/> Effacer la conversation</button><p className="modal-note">Les préférences et l&apos;historique de démonstration sont enregistrés uniquement dans le stockage local de ce navigateur.</p></section></div>}
 
-      {showAbout && <div className="modal-backdrop" onClick={() => setShowAbout(false)}><section className="settings-modal about-modal" onClick={e => e.stopPropagation()}><div className="modal-head"><div><span className="eyebrow">À PROPOS</span><h2>Un assistant, pas un médecin.</h2></div><button className="icon-button" onClick={() => setShowAbout(false)}><X size={18}/></button></div><div className="about-icon"><HeartPulse size={25}/></div><p>SANTÉ+ fournit des informations générales de santé et de prévention à visée éducative. Il ne remplace pas un professionnel de santé, ne pose pas de diagnostic et ne prescrit aucun traitement.</p><div className="notice"><ShieldCheck size={18}/><span>En cas de symptômes graves ou d'urgence, contactez immédiatement les services d'urgence de votre pays.</span></div><h3>À garder en tête</h3><ul><li>Les réponses peuvent être incomplètes ou erronées.</li><li>Les informations générales ne tiennent pas compte de votre dossier médical.</li><li>Ne partagez pas de données personnelles sensibles.</li><li>Demandez conseil à un professionnel qualifié pour toute décision médicale.</li></ul><p className="modal-note">Version de démonstration pédagogique · Moteur de réponses par intentions · Aucun diagnostic médical.</p></section></div>}
+      {showAbout && <div className="modal-backdrop" onClick={() => setShowAbout(false)}><section className="settings-modal about-modal" onClick={e => e.stopPropagation()}><div className="modal-head"><div><span className="eyebrow">À PROPOS</span><h2>Un assistant, pas un médecin.</h2></div><button className="icon-button" onClick={() => setShowAbout(false)}><X size={18}/></button></div><div className="about-icon"><HeartPulse size={25}/></div><p>SANTÉ+ fournit des informations générales de santé et de prévention à visée éducative. Il ne remplace pas un professionnel de santé, ne pose pas de diagnostic et ne prescrit aucun traitement.</p><div className="notice"><ShieldCheck size={18}/><span>En cas de symptômes graves ou d'urgence, contactez immédiatement les services d&apos;urgence de votre pays.</span></div><h3>À garder en tête</h3><ul><li>Les réponses peuvent être incomplètes ou erronées.</li><li>Les informations générales ne tiennent pas compte de votre dossier médical.</li><li>Ne partagez pas de données personnelles sensibles.</li><li>Demandez conseil à un professionnel qualifié pour toute décision médicale.</li></ul><p className="modal-note">Version de démonstration pédagogique · Moteur de réponses par intentions · Aucun diagnostic médical.</p></section></div>}
     </main>
   );
 }
