@@ -106,6 +106,12 @@ export async function POST(request: Request) {
     if (!upstream.ok) {
       const detail = await upstream.text();
       console.error("OpenAI research request failed:", upstream.status, detail.slice(0, 1000));
+      if (upstream.status === 429 && detail.includes("credit_balance_exhausted")) {
+        return NextResponse.json(
+          { error: "Le crédit du compte API OpenAI est épuisé. L'administrateur doit ajouter des crédits sur platform.openai.com/settings/organization/billing avant de relancer la recherche." },
+          { status: 503 },
+        );
+      }
       return NextResponse.json(
         { error: "La recherche documentaire est momentanément indisponible. Réessayez dans quelques instants." },
         { status: 502 },
