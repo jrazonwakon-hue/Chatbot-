@@ -56,7 +56,7 @@ export async function POST(request: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || "gpt-6-luna",
+        model: process.env.OPENAI_MODEL || "gpt-6-astra",
         instructions,
         input: question,
         tools: [{
