@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Activity, ArrowUp, BookOpen, Check, ChevronDown, HeartPulse, Info, Menu, MessageCircle, RotateCcw, ShieldCheck, Sparkles, Stethoscope, Trash2, X } from "lucide-react";
+import { Activity, ArrowUp, BookOpen, HeartPulse, Info, Menu, MessageCircle, RotateCcw, ShieldCheck, Sparkles, Stethoscope, Trash2, X } from "lucide-react";
 
 type Message = { id: string; role: "assistant" | "user"; content: string; time: string };
 type Preferences = { concise: boolean; displayName: string };
@@ -68,7 +68,7 @@ export default function Home() {
     if (!value) return;
     const now = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
     const userMessage: Message = { id: crypto.randomUUID(), role: "user", content: value, time: now };
-    const response: Message = { id: crypto.randomUUID(), role: "assistant", content: answerFor(value, prefs), time: now };
+    const response: Message = { id: crypto.randomUUID(), role: "assistant", content: (() => { const answer = answerFor(value, prefs); return prefs.concise ? answer.split(/(?<=[.!?])\\s+/).slice(0, 2).join(" ") : answer; })(), time: now };
     setMessages(prev => [...prev, userMessage, response]);
     setInput("");
   }
