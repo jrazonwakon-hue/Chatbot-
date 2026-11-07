@@ -137,7 +137,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <footer className="footer"><span>© 2026 SANTÉ+ · Base de connaissances santé</span><button onClick={() => setShowAbout(true)}>Limites et sécurité</button></footer>
+        <footer className="footer"><span>© 2026 SANTÉ+ · Base de connaissances santé</span><span className="footer-links"><Link href="/privacy">Confidentialité</Link><Link href="/terms">Conditions</Link><button onClick={() => setShowAbout(true)}>Limites et sécurité</button></span></footer>
       </section>
 
       {menuOpen && <div className="modal-backdrop" onClick={() => setMenuOpen(false)}><section className="settings-modal" onClick={e => e.stopPropagation()}><div className="modal-head"><div><span className="eyebrow">PERSONNALISATION</span><h2>Vos préférences</h2></div><button className="icon-button" onClick={() => setMenuOpen(false)}><X size={18}/></button></div><label className="field-label">Comment souhaitez-vous être appelé ?<input value={prefs.displayName} onChange={e => setPrefs(p => ({...p, displayName:e.target.value.slice(0,40)}))} placeholder="Votre prénom (facultatif)"/></label><label className="toggle-row"><span><strong>Réponses plus courtes</strong><small>Privilégier les explications concises.</small></span><input type="checkbox" checked={prefs.concise} onChange={e => setPrefs(p => ({...p, concise:e.target.checked}))}/></label><button className="danger-button" onClick={reset}><Trash2 size={16}/> Effacer la conversation</button><p className="modal-note">Les préférences et l&apos;historique de démonstration sont enregistrés uniquement dans le stockage local de ce navigateur.</p></section></div>}
