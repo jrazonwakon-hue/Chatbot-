@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "SANTÉ+ — Base de connaissances santé",
   description: "Assistant francophone avec 140 réponses pédagogiques sur les analyses biomédicales et la santé.",
   applicationName: "SANTÉ+",
-  icons: { icon: "/favicon.png", shortcut: "/favicon.png", apple: "/favicon.png" },
+  icons: { icon: "/icon.svg", shortcut: "/icon.svg", apple: "/icon.svg" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
