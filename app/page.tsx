@@ -19,6 +19,8 @@ const starterPrompts = [
 const initial: Message = { id: "welcome", role: "assistant", time: "Maintenant", content: "Bonjour ! 👋 Je suis SANTÉ+, votre assistant documentaire en analyses biomédicales. Posez vos questions sur les examens de laboratoire, les prélèvements, les méthodes et les résultats biologiques (sans données personnelles)." };
 
 export default function Home() {
+  const router = useRouter();
+  const [authChecked, setAuthChecked] = useState(false);
   const [messages, setMessages] = useState<Message[]>([initial]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -90,8 +92,6 @@ export default function Home() {
     localStorage.removeItem("santeplus-history");
     setMenuOpen(false);
   }
-
-  if (!authChecked) return <main className="portal"><section className="portal-card"><p className="portal-kicker">SANTÉ+</p><h1>Vérification de votre session…</h1><p className="portal-muted">Connexion sécurisée en cours.</p></section></main>;
 
   if (!authChecked) return <main className="portal"><section className="portal-card"><p className="portal-kicker">SANTÉ+</p><h1>Vérification de votre compte…</h1><p className="portal-muted">Veuillez patienter.</p></section></main>;
 
