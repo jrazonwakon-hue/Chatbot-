@@ -34,6 +34,8 @@ export default function Home() {
       try {
         const { data: { user } } = await createClient().auth.getUser();
         if (!user) { router.replace("/login?next=/"); return; }
+        const { data: profile } = await createClient().from("profiles").select("account_status").eq("id", user.id).single();
+        if (profile?.account_status !== "approved") { await createClient().auth.signOut(); router.replace("/login?status=pending"); return; }
         if (active) setAuthChecked(true);
       } catch {
         router.replace("/login");
