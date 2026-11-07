@@ -94,7 +94,7 @@ export default function Home() {
           <div className="mobile-brand"><span className="brand-mark"><Activity size={19}/></span><strong>SANTÉ<span>+</span></strong></div>
           <div className="top-context"><span className="status-dot"/> Assistant en analyses biomédicales <span className="top-divider">/</span> <span className="muted">Français</span></div>
           <div className="top-actions">
-            <span className="safe-label"><ShieldCheck size={15}/> Espace informatif</span>
+            <span className="safe-label"><ShieldCheck size={15}/> Base locale</span>
             <button className="icon-button" title="Nouvelle conversation" onClick={reset}><RotateCcw size={17}/></button>
             <button className="icon-button" title="À propos" onClick={() => setShowAbout(true)}><Info size={17}/></button>
           </div>
@@ -105,7 +105,7 @@ export default function Home() {
             <div className="intro">
               <div className="eyebrow"><Sparkles size={14}/> VOTRE ASSISTANT DE CONNAISSANCES EN SANTÉ</div>
               <h1>Votre santé mérite<br/><span>des réponses claires.</span></h1>
-              <p>Posez vos questions sur les examens de laboratoire et consultez des réponses documentées avec leurs sources.</p>
+              <p>140 réponses pédagogiques intégrées, sans abonnement API ni connexion à un service externe.</p>
             </div>
 
             {messages.length === 1 && (
