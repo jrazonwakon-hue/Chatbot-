@@ -93,6 +93,8 @@ export default function Home() {
 
   if (!authChecked) return <main className="portal"><section className="portal-card"><p className="portal-kicker">SANTÉ+</p><h1>Vérification de votre session…</h1><p className="portal-muted">Connexion sécurisée en cours.</p></section></main>;
 
+  if (!authChecked) return <main className="portal"><section className="portal-card"><p className="portal-kicker">SANTÉ+</p><h1>Vérification de votre compte…</h1><p className="portal-muted">Veuillez patienter.</p></section></main>;
+
   return (
     <main className="app-shell">
       <aside className="sidebar">
