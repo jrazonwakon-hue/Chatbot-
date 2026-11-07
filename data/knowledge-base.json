@@ -1,0 +1,702 @@
+[
+  {
+    "category": "Analyse biomédicale",
+    "question": "Qu'est-ce que l'analyse biomédicale ?",
+    "answer": "L'analyse biomédicale est l'examen d'échantillons biologiques (sang, urine, selles, tissus ou autres liquides) afin de mesurer des paramètres, rechercher des agents infectieux ou contribuer au suivi d'une maladie. Elle complète l'examen clinique et doit être interprétée selon le contexte."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Quel est le rôle d'un laboratoire d'analyses biomédicales ?",
+    "answer": "Le laboratoire réalise les prélèvements ou reçoit les échantillons, vérifie leur conformité, effectue les analyses, contrôle la qualité des résultats et transmet un compte rendu au prescripteur et au patient selon les règles locales. Il contribue au dépistage, au diagnostic, au suivi et à la prévention."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Qu'est-ce qu'une numération formule sanguine (NFS) ?",
+    "answer": "La NFS mesure notamment les globules rouges, l'hémoglobine, l'hématocrite, les globules blancs et les plaquettes. La formule leucocytaire détaille les différentes catégories de globules blancs."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Que signifie un taux élevé de globules blancs ?",
+    "answer": "Une augmentation des leucocytes (leucocytose) peut accompagner une infection, une inflammation, un stress physiologique, certains médicaments ou plus rarement une maladie de la moelle osseuse. La formule leucocytaire, les symptômes et les autres résultats orientent l'interprétation."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Que signifie un taux faible d'hémoglobine ?",
+    "answer": "Une hémoglobine basse évoque une anémie, dont les causes possibles comprennent une carence en fer, vitamine B12 ou folates, un saignement, une maladie chronique ou une anomalie héréditaire. Le bilan complémentaire dépend du contexte et des indices érythrocytaires."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Pourquoi réalise-t-on une glycémie à jeun ?",
+    "answer": "Elle mesure la concentration de glucose après une période sans apport calorique, généralement selon les consignes du laboratoire, pour dépister ou surveiller un trouble de la régulation du sucre. Le diagnostic du diabète repose sur des critères validés et parfois une confirmation."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Qu'est-ce qu'un bilan lipidique ?",
+    "answer": "C'est un ensemble de mesures des lipides sanguins, généralement cholestérol total, HDL, LDL (mesuré ou calculé) et triglycérides. Il contribue à estimer le risque cardiovasculaire avec les autres facteurs de risque."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Comment interpréter un taux élevé de cholestérol ?",
+    "answer": "Un cholestérol élevé, surtout un LDL élevé, peut augmenter le risque cardiovasculaire à long terme. La décision dépend du profil lipidique complet, de l'âge, des antécédents et du risque global, pas d'un chiffre isolé."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Qu'est-ce qu'une analyse des urines (ECBU) ?",
+    "answer": "L'examen cytobactériologique des urines recherche et quantifie des cellules et des bactéries dans les urines pour aider à diagnostiquer une infection urinaire. Le prélèvement doit être réalisé proprement, idéalement avant un antibiotique, selon les consignes du laboratoire."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Que signifie la présence de protéines dans les urines ?",
+    "answer": "La protéinurie peut être transitoire (fièvre, effort, déshydratation) ou révéler une atteinte rénale, notamment glomérulaire. Elle doit souvent être quantifiée et contrôlée, avec évaluation de la fonction rénale."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Pourquoi réalise-t-on un examen parasitologique des selles ?",
+    "answer": "Il recherche des parasites ou leurs formes (œufs, kystes, larves) pouvant expliquer des troubles digestifs. Plusieurs prélèvements à des jours différents peuvent être demandés car l'élimination des parasites est parfois intermittente."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Qu'est-ce qu'un test de dépistage du VIH ?",
+    "answer": "C'est un test qui recherche une infection par le VIH, le plus souvent par détection combinée d'antigènes et d'anticorps ou par test rapide. Un résultat réactif doit être confirmé selon l'algorithme national; la période fenêtre dépend du test et de la date d'exposition."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Quel est le rôle de la CRP dans les analyses sanguines ?",
+    "answer": "La protéine C-réactive est un marqueur sanguin de l'inflammation qui peut augmenter lors d'infections ou d'autres états inflammatoires. Elle n'identifie pas à elle seule la cause ni la localisation du problème."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Pourquoi mesure-t-on le taux de créatinine dans le sang ?",
+    "answer": "La créatinine est un déchet issu du métabolisme musculaire éliminé principalement par les reins. Elle sert, avec des équations adaptées, à estimer le débit de filtration glomérulaire; l'âge, la masse musculaire et d'autres facteurs influencent son interprétation."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Qu'est-ce qu'un bilan hépatique ?",
+    "answer": "Il regroupe des analyses telles que ALAT, ASAT, phosphatases alcalines, GGT et bilirubine, parfois albumine et coagulation. Il aide à repérer une atteinte des cellules du foie, une cholestase ou une altération de certaines fonctions hépatiques."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Comment détecte-t-on une infection bactérienne dans un prélèvement ?",
+    "answer": "Selon le site, le laboratoire peut réaliser un examen microscopique, une culture, une identification de la bactérie et un antibiogramme. Des tests moléculaires peuvent aussi détecter directement le matériel génétique bactérien."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Quelle est la différence entre une analyse sanguine et une analyse urinaire ?",
+    "answer": "L'analyse sanguine étudie le sang et renseigne sur de nombreux paramètres métaboliques, hématologiques ou hormonaux. L'analyse urinaire examine les composants des urines et peut révéler des anomalies rénales, urinaires ou métaboliques."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Pourquoi faut-il parfois être à jeun avant une prise de sang ?",
+    "answer": "Le jeûne est demandé pour certains examens afin de limiter l'influence récente des aliments, notamment pour certains dosages de glucose ou de triglycérides. Il n'est pas nécessaire pour toutes les analyses : il faut suivre les instructions précises du laboratoire et ne pas interrompre un traitement sans avis."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Quelles sont les principales causes d'une augmentation des transaminases ?",
+    "answer": "Les ALAT et ASAT peuvent augmenter lors d'hépatites virales, consommation d'alcool, stéatose hépatique, médicaments ou toxiques, maladies auto-immunes et parfois atteintes musculaires. Le niveau, la durée et les autres tests hépatiques guident l'évaluation."
+  },
+  {
+    "category": "Analyse biomédicale",
+    "question": "Comment interpréter les résultats d'une analyse biologique en tenant compte des valeurs de référence ?",
+    "answer": "Il faut comparer le résultat à l'intervalle indiqué par le laboratoire, qui dépend de la méthode, de l'âge, du sexe et parfois de la grossesse. Un résultat hors intervalle n'est pas automatiquement une maladie; le contexte clinique, les tendances et l'avis du professionnel sont essentiels."
+  },
+  {
+    "category": "Maladies",
+    "question": "Qu'est-ce que le paludisme et comment se transmet-il ?",
+    "answer": "Le paludisme est une maladie parasitaire due à Plasmodium, transmise principalement par la piqûre d'un moustique Anopheles femelle infecté. La fièvre et les frissons sont fréquents; une suspicion, surtout chez l'enfant ou la femme enceinte, nécessite une évaluation rapide et un test."
+  },
+  {
+    "category": "Maladies",
+    "question": "Quelles sont les causes du diabète ?",
+    "answer": "Le diabète correspond à une hyperglycémie chronique. Le type 1 implique une destruction auto-immune des cellules productrices d'insuline; le type 2 associe résistance à l'insuline et insuffisance progressive de sa sécrétion, avec facteurs génétiques et environnementaux."
+  },
+  {
+    "category": "Maladies",
+    "question": "Qu'est-ce que l'hypertension artérielle ?",
+    "answer": "C'est une élévation persistante de la pression du sang dans les artères. Elle est souvent sans symptôme et se confirme par des mesures répétées réalisées correctement, parfois à domicile ou par mesure ambulatoire."
+  },
+  {
+    "category": "Maladies",
+    "question": "Comment se transmet le VIH/SIDA ?",
+    "answer": "Le VIH se transmet par certains liquides biologiques, notamment lors de rapports sexuels sans protection adaptée, du partage de matériel d'injection, et de la mère à l'enfant sans prévention. Il ne se transmet pas par les poignées de main, les repas partagés ou les moustiques."
+  },
+  {
+    "category": "Maladies",
+    "question": "Qu'est-ce que la tuberculose ?",
+    "answer": "La tuberculose est une infection due à Mycobacterium tuberculosis, touchant le plus souvent les poumons. Elle se transmet par l'air lorsqu'une personne atteinte de tuberculose pulmonaire contagieuse émet des particules en toussant ou parlant."
+  },
+  {
+    "category": "Maladies",
+    "question": "Quelles sont les causes de l'anémie ?",
+    "answer": "L'anémie peut résulter d'une production insuffisante de globules rouges, de pertes sanguines ou d'une destruction accrue. Les causes courantes comprennent carence en fer, déficits en B12/folates, maladies chroniques, infections et maladies héréditaires."
+  },
+  {
+    "category": "Maladies",
+    "question": "Qu'est-ce que l'hépatite B ?",
+    "answer": "L'hépatite B est une infection virale du foie due au VHB, transmise par le sang, les rapports sexuels et de la mère à l'enfant. Elle peut être aiguë ou chronique; la vaccination est un moyen majeur de prévention."
+  },
+  {
+    "category": "Maladies",
+    "question": "Comment se manifeste la fièvre typhoïde ?",
+    "answer": "La fièvre typhoïde peut provoquer une fièvre prolongée, maux de tête, douleurs abdominales, fatigue et troubles du transit. Elle est due à Salmonella Typhi, transmise par l'eau ou les aliments contaminés; le diagnostic repose sur des examens adaptés."
+  },
+  {
+    "category": "Maladies",
+    "question": "Qu'est-ce que la drépanocytose ?",
+    "answer": "La drépanocytose est une maladie génétique de l'hémoglobine qui déforme les globules rouges en situation de désoxygénation. Elle peut entraîner anémie, crises douloureuses et infections; le dépistage et le suivi spécialisé sont importants."
+  },
+  {
+    "category": "Maladies",
+    "question": "Quelles sont les causes de l'insuffisance rénale ?",
+    "answer": "Une insuffisance rénale peut être aiguë (déshydratation sévère, infection, obstruction, médicaments toxiques pour le rein) ou chronique (diabète, hypertension, maladies rénales). Le diagnostic s'appuie notamment sur créatinine, DFG estimé et albuminurie."
+  },
+  {
+    "category": "Maladies",
+    "question": "Qu'est-ce que la pneumonie ?",
+    "answer": "La pneumonie est une infection du tissu pulmonaire, causée par des bactéries, virus ou plus rarement champignons. Elle peut provoquer fièvre, toux, douleur thoracique et essoufflement; la gravité varie selon la personne."
+  },
+  {
+    "category": "Maladies",
+    "question": "Comment se transmet le choléra ?",
+    "answer": "Le choléra est une infection intestinale due à Vibrio cholerae, transmise par l'ingestion d'eau ou d'aliments contaminés par des matières fécales. Il peut provoquer une diarrhée aqueuse abondante et une déshydratation rapide."
+  },
+  {
+    "category": "Maladies",
+    "question": "Qu'est-ce que la méningite ?",
+    "answer": "La méningite est une inflammation des membranes entourant le cerveau et la moelle épinière, souvent infectieuse. Une méningite bactérienne est une urgence médicale; fièvre, céphalée intense, raideur de nuque ou confusion nécessitent une prise en charge immédiate."
+  },
+  {
+    "category": "Maladies",
+    "question": "Quelles sont les causes de l'ulcère gastrique ?",
+    "answer": "Les causes principales sont l'infection par Helicobacter pylori et l'utilisation de médicaments anti-inflammatoires non stéroïdiens. Le tabac et certains facteurs peuvent retarder la cicatrisation; un avis médical est nécessaire en cas de symptômes."
+  },
+  {
+    "category": "Maladies",
+    "question": "Qu'est-ce que l'asthme ?",
+    "answer": "L'asthme est une maladie inflammatoire chronique des voies respiratoires, caractérisée par des épisodes variables de sifflements, toux, oppression et difficulté respiratoire. Les symptômes peuvent être déclenchés par allergènes, infections, effort ou fumée."
+  },
+  {
+    "category": "Maladies",
+    "question": "Comment reconnaître une infection urinaire ?",
+    "answer": "Elle peut provoquer brûlures urinaires, envies fréquentes, urgence mictionnelle et douleur sus-pubienne. Fièvre, frissons ou douleur lombaire peuvent signaler une atteinte rénale et justifient une évaluation rapide."
+  },
+  {
+    "category": "Maladies",
+    "question": "Qu'est-ce que la dengue ?",
+    "answer": "La dengue est une infection virale transmise par des moustiques Aedes. Elle peut causer fièvre, douleurs musculaires et articulaires, céphalées et éruption; douleurs abdominales intenses, saignements ou grande faiblesse sont des signes d'alerte."
+  },
+  {
+    "category": "Maladies",
+    "question": "Quelles sont les causes du cancer du col de l'utérus ?",
+    "answer": "La cause nécessaire de la grande majorité des cancers du col est une infection persistante par certains papillomavirus humains (HPV) à haut risque. La vaccination contre le HPV et le dépistage régulier réduisent fortement le risque."
+  },
+  {
+    "category": "Maladies",
+    "question": "Qu'est-ce que la diarrhée infectieuse ?",
+    "answer": "C'est une émission de selles liquides ou fréquentes provoquée par un agent infectieux, souvent virus, bactéries ou parasites. La réhydratation est essentielle; sang dans les selles, forte fièvre, déshydratation ou symptômes persistants nécessitent un avis médical."
+  },
+  {
+    "category": "Maladies",
+    "question": "Quelle est la différence entre une maladie virale et une maladie bactérienne ?",
+    "answer": "Une maladie virale est causée par un virus, une bactérie par un micro-organisme bactérien. Les antibiotiques agissent contre certaines bactéries, pas contre les virus; le traitement dépend de l'agent et de la maladie."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Quelles sont les causes possibles d'une fièvre persistante ?",
+    "answer": "Une fièvre persistante peut être liée à une infection, une maladie inflammatoire, un médicament ou plus rarement un cancer. Sa durée, les signes associés, les voyages et les antécédents orientent les examens; une consultation est indiquée."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Pourquoi peut-on ressentir des maux de tête fréquents ?",
+    "answer": "Les causes incluent migraine, céphalée de tension, troubles du sommeil, déshydratation, problèmes visuels ou abus d'antalgiques. Une céphalée brutale et intense, avec faiblesse, confusion, fièvre et raideur de nuque ou trouble visuel est une urgence."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Que peut signifier une fatigue excessive ?",
+    "answer": "La fatigue peut être due au manque de sommeil, au stress, à une anémie, une infection, un trouble thyroïdien, une dépression ou une maladie chronique. Si elle persiste ou s'accompagne d'autres symptômes, un bilan médical est utile."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Quelles sont les causes des douleurs abdominales ?",
+    "answer": "Les causes vont des troubles digestifs bénins aux infections, calculs, ulcères ou urgences abdominales. Une douleur intense, ventre dur, vomissements persistants, sang, malaise ou grossesse possible nécessite une évaluation urgente."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Pourquoi peut-on avoir des vertiges ?",
+    "answer": "Les vertiges peuvent venir de l'oreille interne, d'une baisse de tension, d'une déshydratation, d'une anémie ou d'un trouble neurologique. Une faiblesse d'un côté, trouble de la parole, vision double ou difficulté à marcher est une urgence."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Que signifie une toux qui dure plusieurs semaines ?",
+    "answer": "Une toux prolongée peut être liée à l'asthme, reflux, allergie, tabac, infection persistante ou tuberculose selon le contexte. Une toux avec sang, essoufflement, douleur thoracique ou perte de poids nécessite une consultation rapide."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Quelles sont les causes des vomissements répétés ?",
+    "answer": "Ils peuvent être dus à une infection digestive, grossesse, migraine, médicaments, obstruction ou autres maladies. Le risque principal est la déshydratation; incapacité à boire, sang, douleur forte ou somnolence imposent une prise en charge."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Pourquoi peut-on ressentir des douleurs dans la poitrine ?",
+    "answer": "Les causes possibles comprennent problème cardiaque, pulmonaire, digestif ou musculaire. Une douleur nouvelle ou oppressante, surtout avec essoufflement, sueurs, nausée ou irradiation vers bras/mâchoire, doit être traitée comme une urgence."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Que peut indiquer une perte de poids inexpliquée ?",
+    "answer": "Elle peut résulter d'un apport alimentaire insuffisant, trouble thyroïdien, diabète, infection chronique, maladie digestive, cancer ou trouble psychologique. Une perte involontaire persistante doit être évaluée médicalement."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Pourquoi observe-t-on parfois du sang dans les urines ?",
+    "answer": "L'hématurie peut être due à une infection, calcul, maladie rénale, traumatisme ou autre affection des voies urinaires. Même sans douleur, elle mérite un avis médical et une analyse adaptée."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Quelles sont les causes des démangeaisons cutanées ?",
+    "answer": "Elles peuvent être provoquées par peau sèche, eczéma, allergie, gale, médicaments ou parfois maladie du foie ou des reins. Une éruption étendue, gonflement du visage ou difficulté respiratoire nécessite une aide urgente."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Que signifie une difficulté à respirer ?",
+    "answer": "L'essoufflement peut être lié à l'asthme, une infection pulmonaire, une maladie cardiaque, une anémie ou une embolie pulmonaire. Une difficulté respiratoire soudaine, sévère, avec lèvres bleutées ou douleur thoracique est une urgence."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Pourquoi peut-on avoir des palpitations cardiaques ?",
+    "answer": "Les palpitations peuvent survenir avec stress, caféine, fièvre, anémie, troubles thyroïdiens ou arythmie. Si elles s'accompagnent de douleur thoracique, malaise, syncope ou essoufflement, demandez une aide urgente."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Quels sont les signes possibles d'une anémie ?",
+    "answer": "Fatigue, pâleur, essoufflement à l'effort, palpitations, vertiges et maux de tête sont possibles. Seule une analyse sanguine, notamment l'hémoglobine, permet de confirmer l'anémie."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Que peut indiquer une diarrhée persistante ?",
+    "answer": "Elle peut être liée à une infection, intolérance alimentaire, maladie inflammatoire intestinale, médicament ou trouble d'absorption. Sang, fièvre, déshydratation, amaigrissement ou persistance justifient une consultation."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Quelles sont les causes des douleurs articulaires ?",
+    "answer": "Elles peuvent être dues à un traumatisme, arthrose, arthrite inflammatoire, infection ou maladie auto-immune. Une articulation rouge, chaude, très douloureuse avec fièvre nécessite une évaluation urgente."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Pourquoi peut-on ressentir une sensation de brûlure pendant la miction ?",
+    "answer": "Une infection urinaire est une cause fréquente, mais une irritation, une infection sexuellement transmissible ou un calcul peuvent aussi être en cause. Une analyse d'urine et un avis médical peuvent être nécessaires."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Quels sont les symptômes d'une hypoglycémie ?",
+    "answer": "Sueurs, tremblements, faim, palpitations, pâleur, irritabilité et confusion sont possibles; une forme sévère peut provoquer convulsions ou perte de connaissance. Chez une personne diabétique, suivre son plan de prise en charge et appeler les secours si elle est inconsciente."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Que peut signifier un gonflement des jambes ?",
+    "answer": "Il peut être dû à une insuffisance veineuse, problème cardiaque, rénal ou hépatique, médicament ou thrombose. Un gonflement soudain d'une seule jambe, surtout douloureux, ou associé à un essoufflement nécessite une évaluation urgente."
+  },
+  {
+    "category": "Symptômes",
+    "question": "Quels symptômes peuvent indiquer une infection grave ?",
+    "answer": "Une confusion, respiration rapide ou difficile, peau froide ou marbrée, malaise, forte faiblesse, douleur intense ou diminution importante des urines peuvent signaler une urgence, notamment un sepsis. Il faut contacter immédiatement les services d'urgence."
+  },
+  {
+    "category": "Prévention",
+    "question": "Comment prévenir le paludisme ?",
+    "answer": "Dormir sous une moustiquaire imprégnée, utiliser des répulsifs adaptés, porter des vêtements couvrants et réduire les eaux stagnantes aide à limiter les piqûres. La chimioprophylaxie peut être recommandée selon le risque et doit être choisie avec un professionnel."
+  },
+  {
+    "category": "Prévention",
+    "question": "Quels sont les moyens de prévenir le VIH ?",
+    "answer": "Utiliser correctement des préservatifs, recourir au dépistage, à la PrEP pour les personnes concernées, à la PEP après une exposition récente et ne jamais partager les aiguilles. Un traitement efficace avec charge virale durablement indétectable empêche la transmission sexuelle (I=I)."
+  },
+  {
+    "category": "Prévention",
+    "question": "Pourquoi la vaccination est-elle importante ?",
+    "answer": "La vaccination entraîne le système immunitaire à reconnaître un agent infectieux et réduit le risque de maladie grave et de transmission. Les vaccins protègent aussi les personnes vulnérables grâce à l'immunité collective."
+  },
+  {
+    "category": "Prévention",
+    "question": "Comment prévenir le diabète de type 2 ?",
+    "answer": "Une activité physique régulière, une alimentation variée riche en fibres, la limitation des boissons sucrées, un poids adapté et l'arrêt du tabac réduisent le risque. Le dépistage est utile en présence de facteurs de risque."
+  },
+  {
+    "category": "Prévention",
+    "question": "Quelles mesures permettent de prévenir l'hypertension ?",
+    "answer": "Limiter le sel, pratiquer une activité physique, manger équilibré, modérer l'alcool, éviter le tabac et maintenir un poids adapté. Mesurer régulièrement la tension permet de repérer une hypertension silencieuse."
+  },
+  {
+    "category": "Prévention",
+    "question": "Comment éviter les infections urinaires ?",
+    "answer": "Boire suffisamment, ne pas retenir longtemps les urines et adopter une hygiène douce peuvent aider. Les récidives nécessitent un avis médical; les mesures préventives dépendent de la situation individuelle."
+  },
+  {
+    "category": "Prévention",
+    "question": "Pourquoi faut-il dormir suffisamment ?",
+    "answer": "Le sommeil soutient la mémoire, l'immunité, l'équilibre hormonal, l'humeur et le métabolisme. Des horaires réguliers et un environnement calme favorisent un sommeil réparateur."
+  },
+  {
+    "category": "Prévention",
+    "question": "Comment prévenir les maladies cardiovasculaires ?",
+    "answer": "Ne pas fumer, bouger régulièrement, adopter une alimentation équilibrée, contrôler tension, glycémie et lipides et suivre les traitements prescrits réduit le risque. La prévention tient compte des facteurs individuels."
+  },
+  {
+    "category": "Prévention",
+    "question": "Quels sont les moyens de prévenir la tuberculose ?",
+    "answer": "Repérer et traiter rapidement les personnes atteintes, assurer l'aération des espaces, utiliser une protection respiratoire en contexte à risque et dépister les contacts. Le vaccin BCG protège surtout les jeunes enfants contre certaines formes graves."
+  },
+  {
+    "category": "Prévention",
+    "question": "Comment protéger les enfants contre les maladies infectieuses ?",
+    "answer": "Respecter le calendrier vaccinal, laver les mains, assurer une eau et des aliments sûrs, aérer les pièces et éviter le contact avec des personnes contagieuses. Consulter rapidement si l'enfant présente des signes inquiétants."
+  },
+  {
+    "category": "Prévention",
+    "question": "Pourquoi le dépistage précoce est-il important ?",
+    "answer": "Il permet parfois de détecter une maladie avant les symptômes, d'agir plus tôt et de réduire les complications. Le dépistage doit être adapté à l'âge, aux risques et aux recommandations nationales."
+  },
+  {
+    "category": "Prévention",
+    "question": "Comment prévenir les hépatites virales ?",
+    "answer": "La vaccination protège contre les hépatites A et B lorsqu'elle est indiquée. L'eau et les aliments sûrs préviennent l'hépatite A; matériel d'injection stérile, préservatifs et sécurité transfusionnelle réduisent le risque des hépatites B et C."
+  },
+  {
+    "category": "Prévention",
+    "question": "Quelles précautions prendre pour éviter les intoxications alimentaires ?",
+    "answer": "Se laver les mains, séparer aliments crus et cuits, bien cuire, conserver au froid et utiliser de l'eau potable. Jeter les aliments dont la conservation ou l'innocuité est douteuse."
+  },
+  {
+    "category": "Prévention",
+    "question": "Comment prévenir la transmission des infections en milieu hospitalier ?",
+    "answer": "Appliquer l'hygiène des mains, les précautions standard, les équipements de protection adaptés, la désinfection et la stérilisation validées, ainsi que la gestion sûre des déchets et des dispositifs piquants."
+  },
+  {
+    "category": "Prévention",
+    "question": "Pourquoi faut-il éviter l'automédication ?",
+    "answer": "Un médicament mal choisi ou mal dosé peut provoquer effets indésirables, interactions, retard de diagnostic ou résistance aux antibiotiques. Demander conseil à un professionnel, notamment pour enfants, grossesse et maladies chroniques."
+  },
+  {
+    "category": "Prévention",
+    "question": "Comment prévenir les maladies liées à la sédentarité ?",
+    "answer": "Interrompre régulièrement les périodes assises, marcher, pratiquer une activité physique adaptée et renforcer les muscles. Réduire le temps d'écran inactif et progresser graduellement."
+  },
+  {
+    "category": "Prévention",
+    "question": "Quelles sont les méthodes de prévention du cancer du col de l'utérus ?",
+    "answer": "La vaccination contre le HPV, le dépistage cervical selon l'âge et les recommandations nationales, et le suivi des anomalies détectées sont les moyens essentiels. Le préservatif réduit certains risques sans éliminer totalement le HPV."
+  },
+  {
+    "category": "Prévention",
+    "question": "Comment éviter les piqûres de moustiques ?",
+    "answer": "Utiliser moustiquaires, répulsifs homologués, vêtements couvrants et moustiquaires aux fenêtres. Vider ou couvrir les récipients contenant de l'eau stagnante."
+  },
+  {
+    "category": "Prévention",
+    "question": "Pourquoi le suivi médical régulier est-il important ?",
+    "answer": "Il aide à repérer les facteurs de risque, mettre à jour les vaccinations, surveiller les maladies chroniques et adapter les soins. La fréquence dépend de l'âge, des antécédents et de l'état de santé."
+  },
+  {
+    "category": "Prévention",
+    "question": "Quelles mesures adopter pour prévenir les maladies respiratoires ?",
+    "answer": "Vaccination recommandée, lavage des mains, aération, éviter la fumée, couvrir toux et éternuements et rester à distance en cas d'infection. Un masque peut être utile dans les lieux clos ou selon les recommandations locales."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Qu'est-ce qu'une alimentation équilibrée ?",
+    "answer": "Elle apporte en quantités adaptées légumes, fruits, légumineuses, céréales complètes ou peu raffinées, protéines variées, produits riches en calcium et matières grasses de bonne qualité. L'équilibre se construit sur la journée et la semaine."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Quels aliments sont riches en protéines ?",
+    "answer": "Poisson, œufs, viande, lait et produits laitiers, haricots, niébé, lentilles, soja, arachides et noix apportent des protéines. Varier les sources aide à couvrir les besoins."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Quel est le rôle des glucides dans l'organisme ?",
+    "answer": "Les glucides constituent une source majeure d'énergie, notamment pour le cerveau et les muscles. Privilégier les aliments peu transformés et riches en fibres plutôt que les boissons sucrées et sucres ajoutés."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Pourquoi les vitamines sont-elles importantes ?",
+    "answer": "Les vitamines participent au fonctionnement immunitaire, au métabolisme, à la vision, à la formation du sang et à la santé des os. Une alimentation variée couvre généralement les besoins, sauf situations particulières."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Quels aliments sont riches en fer ?",
+    "answer": "Viandes, poissons et abats contiennent du fer héminique bien absorbé; haricots, lentilles, feuilles vertes et céréales enrichies apportent du fer non héminique. La vitamine C améliore l'absorption du fer végétal."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Quel est le rôle du calcium dans le corps humain ?",
+    "answer": "Le calcium est essentiel à la solidité des os et des dents, à la contraction musculaire, à la transmission nerveuse et à la coagulation. On le trouve notamment dans les produits laitiers, certains poissons consommés avec arêtes et aliments enrichis."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Pourquoi faut-il boire suffisamment d'eau chaque jour ?",
+    "answer": "L'eau participe à la régulation de la température, au transport des nutriments et à l'élimination des déchets. Les besoins varient avec le climat, l'activité, l'âge et l'état de santé; boire régulièrement et davantage en cas de chaleur."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Quels aliments peuvent aider à prévenir l'anémie ?",
+    "answer": "Les aliments riches en fer (viande, poisson, légumineuses, feuilles vertes) associés à des sources de vitamine C favorisent l'apport et l'absorption du fer. Une anémie confirmée nécessite d'en rechercher la cause plutôt que de prendre du fer sans bilan."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Quelle alimentation conseiller à une personne diabétique ?",
+    "answer": "Privilégier légumes, légumineuses, céréales complètes, fruits entiers en portions adaptées, protéines maigres et eau; limiter boissons sucrées et produits très raffinés. Les conseils doivent être individualisés avec un professionnel."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Quels aliments faut-il limiter en cas d'hypertension ?",
+    "answer": "Limiter les aliments très salés (bouillons cubes, charcuteries, conserves salées, snacks), les produits ultra-transformés et l'excès d'alcool. Lire les étiquettes et utiliser herbes et épices pour assaisonner."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Pourquoi les fruits et légumes sont-ils importants ?",
+    "answer": "Ils apportent fibres, vitamines, minéraux et composés protecteurs, et contribuent à la santé digestive et cardiovasculaire. Varier les couleurs et choisir des produits locaux et de saison est utile."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Quelle est la différence entre les bonnes et les mauvaises graisses ?",
+    "answer": "Les graisses insaturées (poissons, noix, graines, huiles végétales) sont généralement préférables aux graisses saturées et trans, dont l'excès augmente le risque cardiovasculaire. La quantité totale et le type de graisse comptent."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Quels sont les risques d'une consommation excessive de sucre ?",
+    "answer": "Elle favorise caries dentaires, prise de poids et risque de diabète de type 2 lorsqu'elle contribue à un excès énergétique. Limiter surtout les boissons sucrées et sucres ajoutés."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Pourquoi les fibres alimentaires facilitent-elles la digestion ?",
+    "answer": "Les fibres augmentent le volume des selles, favorisent le transit et nourrissent certaines bactéries intestinales. Les augmenter progressivement avec une hydratation suffisante peut limiter l'inconfort."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Quels aliments sont recommandés pendant la grossesse ?",
+    "answer": "Une alimentation variée avec légumes, fruits lavés, légumineuses, protéines bien cuites et aliments riches en fer, folates, calcium et iode est recommandée. Éviter alcool, aliments à risque infectieux et poissons riches en mercure; suivre les conseils prénataux."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Comment lutter contre la malnutrition chez les enfants ?",
+    "answer": "Proposer des repas fréquents, variés et riches en énergie et nutriments, poursuivre l'allaitement selon les recommandations et utiliser des aliments locaux adaptés à l'âge. Suivre la croissance et consulter rapidement en cas de perte de poids ou œdèmes."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Quel est le rôle des protéines dans la croissance ?",
+    "answer": "Les protéines fournissent les acides aminés nécessaires à la construction et à la réparation des tissus, aux enzymes et aux défenses immunitaires. Les besoins sont particulièrement importants pendant la croissance."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Quelles sont les conséquences d'une carence en vitamine A ?",
+    "answer": "Elle peut provoquer une baisse de la vision nocturne, sécheresse oculaire et, dans les cas sévères, cécité; elle augmente aussi la vulnérabilité aux infections. Les sources comprennent aliments orange, légumes verts foncés, œufs et produits animaux."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Pourquoi faut-il limiter la consommation excessive de sel ?",
+    "answer": "Un excès de sodium favorise l'hypertension et augmente le risque cardiovasculaire et rénal. Réduire le sel ajouté et les produits très salés est bénéfique."
+  },
+  {
+    "category": "Nutrition",
+    "question": "Comment composer un repas équilibré avec des aliments locaux africains ?",
+    "answer": "Composer l'assiette avec une bonne part de légumes, une portion de céréales ou tubercules (maïs, riz, igname, manioc), une source de protéines (niébé, haricots, poisson, œuf) et un fruit. Varier les aliments et modérer sel, huile et boissons sucrées."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Pourquoi est-il important de se laver régulièrement les mains ?",
+    "answer": "Le lavage des mains au savon élimine de nombreux microbes et réduit la transmission des infections digestives et respiratoires. Il est particulièrement important avant de préparer ou manger, après les toilettes et après avoir nettoyé un enfant."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Quelles sont les principales étapes d'un bon lavage des mains ?",
+    "answer": "Mouiller les mains, appliquer du savon, frotter paumes, dos, espaces entre les doigts, pouces, bouts des doigts et poignets pendant au moins 20 secondes, rincer puis sécher avec un support propre."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Pourquoi faut-il boire de l'eau potable ?",
+    "answer": "Une eau sûre limite les maladies transmises par l'eau, notamment diarrhées, choléra et typhoïde. En cas de doute, utiliser une méthode de traitement reconnue et conserver l'eau dans un récipient propre et fermé."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Comment conserver correctement les aliments ?",
+    "answer": "Séparer crus et cuits, couvrir les aliments, réfrigérer rapidement les denrées périssables et respecter les températures et durées sûres. Ne pas laisser longtemps les aliments cuits à température ambiante."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Pourquoi faut-il nettoyer régulièrement les toilettes ?",
+    "answer": "Le nettoyage réduit les microbes et les risques de contamination des mains, de l'eau et des surfaces. Utiliser des produits adaptés, ventiler et se laver les mains après le nettoyage."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Quelles sont les conséquences d'une mauvaise hygiène corporelle ?",
+    "answer": "Elle peut favoriser certaines infections cutanées, irritations, mauvaises odeurs et problèmes bucco-dentaires. L'hygiène doit rester douce et adaptée, sans produits agressifs ni lavages excessifs."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Comment prévenir les infections liées aux aliments contaminés ?",
+    "answer": "Se laver les mains, utiliser de l'eau potable, bien cuire, séparer aliments crus et cuits, nettoyer les ustensiles et conserver au froid les produits périssables. Éviter les aliments dont l'origine ou la conservation est douteuse."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Pourquoi faut-il se brosser les dents au moins deux fois par jour ?",
+    "answer": "Le brossage au dentifrice fluoré enlève la plaque et aide à prévenir caries et maladies des gencives. Un brossage le soir et un autre à un autre moment de la journée sont recommandés."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Comment maintenir une bonne hygiène bucco-dentaire ?",
+    "answer": "Se brosser les dents deux fois par jour avec un dentifrice fluoré, nettoyer entre les dents, limiter les sucres fréquents et consulter régulièrement un professionnel dentaire."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Pourquoi faut-il nettoyer et désinfecter les surfaces ?",
+    "answer": "Le nettoyage retire saletés et matières organiques; la désinfection réduit les micro-organismes lorsque cela est nécessaire. Choisir un produit adapté et respecter dilution et temps de contact."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Quelles sont les règles d'hygiène dans un laboratoire biomédical ?",
+    "answer": "Appliquer les précautions standard, hygiène des mains, blouse et équipements adaptés, interdiction de manger/boire, désinfection des plans de travail, gestion des objets piquants et déchets, et procédures en cas d'exposition."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Pourquoi le port des gants est-il important en milieu médical ?",
+    "answer": "Les gants protègent contre le contact avec le sang, liquides biologiques et produits dangereux dans les situations indiquées. Ils ne remplacent jamais l'hygiène des mains et doivent être changés entre patients ou tâches."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Comment éliminer correctement les déchets médicaux ?",
+    "answer": "Trier les déchets à la source selon les règles nationales : objets piquants/coupants dans des collecteurs rigides, déchets infectieux dans des emballages dédiés et déchets ordinaires séparément. Le traitement doit être assuré par une filière autorisée."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Pourquoi faut-il stériliser le matériel médical ?",
+    "answer": "La stérilisation détruit toutes les formes de micro-organismes, y compris les spores, sur les dispositifs qui doivent être stériles. Elle prévient les infections associées aux soins et doit être validée et tracée."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Qu'est-ce que l'hygiène alimentaire ?",
+    "answer": "Elle regroupe les pratiques qui assurent la sécurité des aliments depuis l'achat jusqu'au service : propreté, séparation cru/cuit, cuisson suffisante, températures sûres et eau potable."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Comment prévenir les maladies liées à l'eau insalubre ?",
+    "answer": "Protéger les sources, traiter l'eau selon une méthode fiable, la stocker couverte, utiliser des latrines sûres et se laver les mains au savon. En situation d'épidémie, suivre les consignes sanitaires locales."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Pourquoi faut-il bien laver les fruits et légumes ?",
+    "answer": "Le lavage à l'eau potable enlève terre et une partie des contaminants présents en surface. Laver avant consommation ou découpe et retirer les parties abîmées; le lavage ne rend pas sûr un aliment contaminé en profondeur."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Quelles sont les règles d'hygiène pendant les menstruations ?",
+    "answer": "Se laver les mains avant et après avoir changé une protection, changer régulièrement les protections et laver doucement la zone externe avec de l'eau. Les protections réutilisables doivent être lavées et séchées complètement."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Comment éviter la contamination croisée dans une cuisine ?",
+    "answer": "Séparer viandes et poissons crus des aliments prêts à consommer, utiliser planches et ustensiles distincts, se laver les mains et nettoyer les surfaces après manipulation des aliments crus."
+  },
+  {
+    "category": "Hygiène",
+    "question": "Pourquoi l'assainissement de l'environnement est-il important pour la santé publique ?",
+    "answer": "La gestion des eaux usées, déchets, excréments et eaux stagnantes réduit la propagation des agents infectieux et des vecteurs. Un environnement propre protège la communauté et améliore la qualité de vie."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Qu'est-ce qu'un médicament ?",
+    "answer": "Un médicament est une substance ou association présentée pour prévenir ou traiter une maladie, ou établir un diagnostic, et qui agit sur l'organisme. Son utilisation doit respecter les indications, la dose et les précautions."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Quelle est la différence entre un médicament générique et un médicament princeps ?",
+    "answer": "Le princeps est le médicament de référence initialement autorisé; le générique contient le même principe actif, au même dosage et avec une bioéquivalence démontrée selon les règles applicables. Les excipients ou l'apparence peuvent différer."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Qu'est-ce qu'un antibiotique ?",
+    "answer": "Un antibiotique est un médicament qui tue certaines bactéries ou bloque leur multiplication. Il n'agit pas contre les virus et doit être utilisé uniquement lorsqu'il est indiqué."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Pourquoi ne faut-il pas prendre des antibiotiques sans prescription médicale ?",
+    "answer": "Une prise inappropriée peut provoquer effets indésirables, masquer une maladie, être inefficace et favoriser l'antibiorésistance. Le choix dépend du site infectieux, du germe probable, des allergies et des recommandations."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Quelle est la différence entre un antalgique et un anti-inflammatoire ?",
+    "answer": "Un antalgique vise à soulager la douleur; un anti-inflammatoire réduit l'inflammation et peut aussi soulager la douleur. Certains médicaments ont les deux effets, mais leurs risques et contre-indications diffèrent."
+  },
+  {
+    "category": "Médicaments",
+    "question": "À quoi sert le paracétamol ?",
+    "answer": "Le paracétamol est utilisé pour soulager la douleur et faire baisser la fièvre. Un surdosage peut gravement endommager le foie; respecter la notice et vérifier qu'il n'est pas présent dans plusieurs produits pris simultanément."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Quels sont les effets secondaires possibles des antibiotiques ?",
+    "answer": "Ils peuvent provoquer nausées, diarrhée, douleurs abdominales, éruptions ou candidose; certaines réactions allergiques sont graves. Une difficulté respiratoire ou un gonflement du visage après une prise impose une urgence."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Qu'est-ce qu'une contre-indication médicamenteuse ?",
+    "answer": "C'est une situation dans laquelle un médicament ne doit pas être utilisé, car le risque peut être supérieur au bénéfice. Elle peut être liée à une allergie, grossesse, maladie, âge ou interaction."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Pourquoi faut-il respecter la posologie d'un médicament ?",
+    "answer": "La posologie précise dose, fréquence et durée nécessaires pour obtenir l'effet attendu en limitant les risques. Modifier ou arrêter un traitement sans avis peut entraîner échec, toxicité ou rechute."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Qu'est-ce qu'une interaction médicamenteuse ?",
+    "answer": "C'est une modification de l'effet ou de la concentration d'un médicament par un autre médicament, aliment, plante ou produit. Elle peut augmenter les effets indésirables ou diminuer l'efficacité."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Quelle est la différence entre un médicament injectable et un médicament oral ?",
+    "answer": "Un médicament oral est pris par la bouche et absorbé par le tube digestif; un injectable est administré par une voie comme intraveineuse, intramusculaire ou sous-cutanée. La voie dépend du médicament, de l'urgence et de l'état du patient."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Pourquoi certains médicaments doivent-ils être pris pendant les repas ?",
+    "answer": "La nourriture peut réduire l'irritation digestive ou modifier l'absorption de certains médicaments. D'autres doivent au contraire être pris à jeun; suivre la notice ou les instructions du pharmacien."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Comment conserver correctement les médicaments ?",
+    "answer": "Les conserver dans leur emballage d'origine, à l'abri de chaleur, humidité et lumière, hors de portée des enfants et selon la température indiquée. Ne pas utiliser un médicament périmé ou dont l'aspect a changé."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Quels sont les risques liés à l'automédication ?",
+    "answer": "Elle peut conduire à un mauvais traitement, des interactions, un surdosage, des allergies ou retarder le diagnostic. Demander conseil au pharmacien ou médecin, surtout pour enfants, grossesse et maladies chroniques."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Qu'est-ce qu'une allergie médicamenteuse ?",
+    "answer": "C'est une réaction immunitaire anormale à un médicament, pouvant aller d'une éruption à une réaction grave appelée anaphylaxie. En cas de gonflement du visage, gêne respiratoire ou malaise, appeler les secours."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Pourquoi faut-il terminer un traitement antibiotique selon les indications du prescripteur ?",
+    "answer": "Il faut suivre exactement la durée prescrite et ne pas modifier le traitement de sa propre initiative. La durée optimale dépend de l'infection; en cas d'effet indésirable ou de doute, contacter le prescripteur plutôt que prolonger ou arrêter seul."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Quelle est la différence entre un médicament antiviral et un antibiotique ?",
+    "answer": "Un antiviral agit contre certains virus en bloquant une étape de leur multiplication; un antibiotique agit contre des bactéries. Ils ne sont pas interchangeables et ne sont efficaces que pour des infections ciblées."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Pourquoi certains médicaments nécessitent-ils une ordonnance ?",
+    "answer": "Parce qu'ils peuvent présenter des risques importants, nécessiter un diagnostic, un suivi, des examens ou un ajustement de dose. L'ordonnance encadre leur usage et aide à prévenir les complications."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Que faut-il faire en cas d'oubli d'une dose de médicament ?",
+    "answer": "Consulter la notice ou demander conseil au pharmacien, car la conduite dépend du médicament et du délai écoulé. Ne jamais doubler automatiquement la dose pour compenser un oubli."
+  },
+  {
+    "category": "Médicaments",
+    "question": "Quels sont les risques d'un surdosage médicamenteux ?",
+    "answer": "Un surdosage peut provoquer intoxication, atteinte du foie ou des reins, troubles cardiaques, neurologiques, coma ou décès selon le produit. Contacter immédiatement un centre antipoison ou les urgences, même en l'absence de symptômes."
+  }
+]
