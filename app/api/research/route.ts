@@ -17,7 +17,37 @@ const ALLOWED_DOMAINS = [
 
 type Source = { title: string; url: string };
 
+// Best-effort per-instance protection against accidental rapid repeat requests.
+const requestWindows = new Map<string, number[]>();
+const WINDOW_MS = 60_000;
+const MAX_REQUESTS_PER_WINDOW = 8;
+
 export async function POST(request: Request) {
+  const origin = request.headers.get("origin");
+  if (origin) {
+    try {
+      if (new URL(origin).host !== new URL(request.url).host) {
+        return NextResponse.json({ error: "Origine de requête non autorisée." }, { status: 403 });
+      }
+    } catch {
+      return NextResponse.json({ error: "Origine de requête invalide." }, { status: 403 });
+    }
+  }
+
+  const forwardedFor = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const now = Date.now();
+  const recent = (requestWindows.get(forwardedFor) || []).filter(timestamp => now - timestamp < WINDOW_MS);
+  if (recent.length >= MAX_REQUESTS_PER_WINDOW) {
+    return NextResponse.json({ error: "Trop de demandes rapprochées. Patientez une minute avant de réessayer." }, { status: 429 });
+  }
+  recent.push(now);
+  requestWindows.set(forwardedFor, recent);
+  if (requestWindows.size > 5000) requestWindows.clear();
+
+  const contentLength = Number(request.headers.get("content-length") || 0);
+  if (contentLength > 8192) {
+    return NextResponse.json({ error: "Requête trop volumineuse." }, { status: 413 });
+  }
   if (!process.env.OPENAI_API_KEY) {
     return NextResponse.json(
       { error: "La recherche documentaire n'est pas encore configurée. La clé API du service doit être ajoutée par l'administrateur." },
@@ -41,6 +71,7 @@ export async function POST(request: Request) {
     "Tu es SANTÉ+, un assistant pédagogique spécialisé en analyses biomédicales et biologie médicale.",
     "Effectue obligatoirement une recherche Web avant de répondre. Appuie-toi prioritairement sur les sources scientifiques et institutionnelles autorisées.",
     "Réponds en français clair, structuré et compréhensible par des étudiants en analyses biomédicales et le grand public.",
+    "Reste strictement dans le domaine des analyses biomédicales, de la biologie médicale, des prélèvements, des méthodes de laboratoire et de l'interprétation pédagogique des examens. Si la question est hors sujet, explique poliment le périmètre de SANTÉ+ et invite à poser une question de biologie médicale.",
     "Pour une analyse, explique si pertinent : définition, principe, type de prélèvement, préparation/pré-analytique, méthode, intérêt, limites et précautions d'interprétation.",
     "Distingue les faits établis, les recommandations et les incertitudes. Ne fabrique jamais de valeurs de référence, de seuils, de recommandations ou de citations.",
     "N'établis aucun diagnostic individuel, ne prescris aucun traitement et n'interprète pas un résultat personnel comme une décision médicale. Oriente vers un biologiste médical ou un professionnel de santé lorsque nécessaire.",
