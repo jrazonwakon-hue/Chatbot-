@@ -13,7 +13,7 @@ const starterPrompts = [
   { icon: Stethoscope, label: "Immunologie", prompt: "Quelle différence entre antigène et anticorps en sérologie ?" },
 ];
 
-const initial: Message = { id: "welcome", role: "assistant", time: "Maintenant", content: "Bonjour ! 👋 Je suis SANTÉ+, votre assistant d'information santé. Je peux vous aider à mieux comprendre la prévention, les maladies courantes, l'hygiène et la nutrition. Que souhaitez-vous savoir aujourd'hui ?" };
+const initial: Message = { id: "welcome", role: "assistant", time: "Maintenant", content: "Bonjour ! 👋 Je suis SANTÉ+, votre assistant documentaire en analyses biomédicales. Posez vos questions sur les examens de laboratoire, les prélèvements, les méthodes et les résultats biologiques (sans données personnelles)." };
 
 export default function Home() {
   const [messages, setMessages] = useState<Message[]>([initial]);
@@ -67,7 +67,7 @@ export default function Home() {
     } finally { setLoading(false); }
   }
   function reset() {
-    setMessages([{ ...initial, content: `${greeting} Je suis SANTÉ+, votre assistant d'information santé. Comment puis-je vous aider ?` }]);
+    setMessages([{ ...initial, content: `${greeting} Je suis SANTÉ+, votre assistant en analyses biomédicales. Quelle analyse souhaitez-vous comprendre ?` }]);
     localStorage.removeItem("santeplus-history");
     setMenuOpen(false);
   }
@@ -77,14 +77,14 @@ export default function Home() {
       <aside className="sidebar">
         <a className="brand" href="#" aria-label="SANTÉ+ accueil">
           <span className="brand-mark"><Activity size={23} strokeWidth={2.5}/></span>
-          <span><strong>SANTÉ<span>+</span></strong><small>INFORMATION SANTÉ</small></span>
+          <span><strong>SANTÉ<span>+</span></strong><small>ANALYSES BIOMÉDICALES</small></span>
         </a>
         <button className="new-chat" onClick={reset}><span>＋</span> Nouvelle conversation</button>
         <div className="side-label">VOTRE ESPACE</div>
         <button className="side-link active" onClick={reset}><MessageCircle size={17}/> Assistant santé</button>
         <button className="side-link" onClick={() => setShowAbout(true)}><Info size={17}/> À propos de SANTÉ+</button>
         <div className="sidebar-bottom">
-          <div className="privacy-card"><ShieldCheck size={19}/><div><strong>Votre confidentialité</strong><p>Vos échanges restent dans ce navigateur sur cette version de démonstration.</p></div></div>
+          <div className="privacy-card"><ShieldCheck size={19}/><div><strong>Votre confidentialité</strong><p>Votre historique reste dans ce navigateur. Les questions sont transmises à OpenAI pour la recherche documentaire. Ne partagez aucune donnée personnelle ou médicale identifiante.</p></div></div>
           <div className="profile"><div className="avatar">S+</div><div><strong>{prefs.displayName || "Visiteur"}</strong><small>Session locale</small></div><button aria-label="Ouvrir les préférences" onClick={() => setMenuOpen(!menuOpen)}><Menu size={18}/></button></div>
         </div>
       </aside>
@@ -92,7 +92,7 @@ export default function Home() {
       <section className="workspace">
         <header className="topbar">
           <div className="mobile-brand"><span className="brand-mark"><Activity size={19}/></span><strong>SANTÉ<span>+</span></strong></div>
-          <div className="top-context"><span className="status-dot"/> Assistant d&apos;information santé <span className="top-divider">/</span> <span className="muted">Français</span></div>
+          <div className="top-context"><span className="status-dot"/> Assistant en analyses biomédicales <span className="top-divider">/</span> <span className="muted">Français</span></div>
           <div className="top-actions">
             <span className="safe-label"><ShieldCheck size={15}/> Espace informatif</span>
             <button className="icon-button" title="Nouvelle conversation" onClick={reset}><RotateCcw size={17}/></button>
@@ -105,7 +105,7 @@ export default function Home() {
             <div className="intro">
               <div className="eyebrow"><Sparkles size={14}/> VOTRE COMPAGNON D&apos;INFORMATION SANTÉ</div>
               <h1>Votre santé mérite<br/><span>des réponses claires.</span></h1>
-              <p>Posez vos questions et découvrez des informations simples pour mieux comprendre la santé au quotidien.</p>
+              <p>Posez vos questions sur les examens de laboratoire et consultez des réponses documentées avec leurs sources.</p>
             </div>
 
             {messages.length === 1 && (
