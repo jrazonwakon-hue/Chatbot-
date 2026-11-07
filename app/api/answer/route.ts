@@ -52,7 +52,7 @@ export async function POST(request: Request) {
   const match = findBest(question);
   if (!match.entry || match.score < 0.22) {
     return NextResponse.json({
-      answer: "Je ne trouve pas encore de réponse suffisamment proche dans ma base de connaissances locale. Cette version fonctionne sans recherche Internet ni service OpenAI. Essayez de reformuler votre question ou choisissez un sujet parmi les 7 domaines disponibles : analyses biomédicales, maladies, symptômes, prévention, nutrition, hygiène et médicaments.",
+      answer: "Je ne trouve pas de réponse suffisamment fiable dans ma base de connaissances. Je préfère ne pas inventer une réponse médicale. Contactez votre médecin ou un professionnel de santé pour obtenir un avis adapté à votre situation. En cas de difficulté à respirer, douleur thoracique intense, perte de connaissance, saignement important ou autre signe grave, contactez immédiatement les urgences. Vous pouvez aussi reformuler votre question sur l’un de nos 7 domaines : analyses biomédicales, maladies, symptômes, prévention, nutrition, hygiène et médicaments.",
       sources: [],
       matched: false,
     });
