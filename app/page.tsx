@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { createClient } from "@/lib/supabase/client";
 import { Activity, ArrowUp, BookOpen, HeartPulse, Info, Menu, MessageCircle, RotateCcw, ShieldCheck, Sparkles, Stethoscope, Trash2, X } from "lucide-react";
 
 type Message = { id: string; role: "assistant" | "user"; content: string; time: string; sources?: { title: string; url: string }[] };
@@ -25,6 +27,20 @@ export default function Home() {
   const [showAbout, setShowAbout] = useState(false);
   const [mounted, setMounted] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let active = true;
+    (async () => {
+      try {
+        const { data: { user } } = await createClient().auth.getUser();
+        if (!user) { router.replace("/login"); return; }
+        if (active) setAuthChecked(true);
+      } catch {
+        router.replace("/login");
+      }
+    })();
+    return () => { active = false; };
+  }, [router]);
 
   useEffect(() => {
     setMounted(true);
@@ -72,6 +88,8 @@ export default function Home() {
     localStorage.removeItem("santeplus-history");
     setMenuOpen(false);
   }
+
+  if (!authChecked) return <main className="portal"><section className="portal-card"><p className="portal-kicker">SANTÉ+</p><h1>Vérification de votre session…</h1><p className="portal-muted">Connexion sécurisée en cours.</p></section></main>;
 
   return (
     <main className="app-shell">
