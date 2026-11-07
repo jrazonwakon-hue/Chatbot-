@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { Activity, ArrowUp, BookOpen, HeartPulse, Info, Menu, MessageCircle, RotateCcw, ShieldCheck, Sparkles, Stethoscope, Trash2, X } from "lucide-react";
 
 type Message = { id: string; role: "assistant" | "user"; content: string; time: string; sources?: { title: string; url: string }[] };
@@ -97,6 +98,7 @@ export default function Home() {
             <span className="safe-label"><ShieldCheck size={15}/> Base locale</span>
             <button className="icon-button" title="Nouvelle conversation" onClick={reset}><RotateCcw size={17}/></button>
             <button className="icon-button" title="À propos" onClick={() => setShowAbout(true)}><Info size={17}/></button>
+            <Link className="portal-login-link" href="/login">Espace médecin</Link>
           </div>
         </header>
 
