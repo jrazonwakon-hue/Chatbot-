@@ -50,6 +50,6 @@ export async function POST(request:Request){
   return NextResponse.json({received:true});
  }catch(error){
   console.error("Meta webhook processing failed:",error instanceof Error?error.message:"unknown error");
-  return NextResponse.json({received:true,processing:"deferred"});
+  return NextResponse.json({received:false,error:"Temporary processing failure; Meta may retry."},{status:500});
  }
 }
