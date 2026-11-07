@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Activity, ArrowUp, BookOpen, HeartPulse, Info, Menu, MessageCircle, RotateCcw, ShieldCheck, Sparkles, Stethoscope, Trash2, X } from "lucide-react";
 
-type Message = { id: string; role: "assistant" | "user"; content: string; time: string };
+type Message = { id: string; role: "assistant" | "user"; content: string; time: string; sources?: { title: string; url: string }[] };
 type Preferences = { concise: boolean; displayName: string };
 
 const starterPrompts = [
@@ -56,6 +56,7 @@ const initial: Message = { id: "welcome", role: "assistant", time: "Maintenant",
 export default function Home() {
   const [messages, setMessages] = useState<Message[]>([initial]);
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
   const [prefs, setPrefs] = useState<Preferences>({ concise: false, displayName: "" });
   const [menuOpen, setMenuOpen] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
@@ -83,14 +84,25 @@ export default function Home() {
   }, [messages, prefs, mounted]);
 
   const greeting = prefs.displayName.trim() ? `Bonjour ${prefs.displayName.trim()} !` : "Bonjour !";
-  function send(text = input) {
+  async function send(text = input) {
     const value = text.trim();
-    if (!value) return;
+    if (!value || loading) return;
     const now = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
     const userMessage: Message = { id: crypto.randomUUID(), role: "user", content: value, time: now };
-    const response: Message = { id: crypto.randomUUID(), role: "assistant", content: (() => { const answer = answerFor(value, prefs); return prefs.concise ? answer.split(/(?<=[.!?])\\s+/).slice(0, 2).join(" ") : answer; })(), time: now };
-    setMessages(prev => [...prev, userMessage, response]);
+    setMessages(prev => [...prev, userMessage]);
     setInput("");
+    setLoading(true);
+    try {
+      const result = await fetch("/api/research", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: value }) });
+      const payload = await result.json();
+      if (!result.ok) throw new Error(payload.error || "La recherche n'a pas pu aboutir.");
+      const answer = typeof payload.answer === "string" ? payload.answer : "Aucune réponse exploitable n'a été reçue.";
+      const response: Message = { id: crypto.randomUUID(), role: "assistant", content: prefs.concise ? answer.split(/(?<=[.!?])\\s+/).slice(0, 2).join(" ") : answer, time: new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }), sources: Array.isArray(payload.sources) ? payload.sources : [] };
+      setMessages(prev => [...prev, response]);
+    } catch (error) {
+      const response: Message = { id: crypto.randomUUID(), role: "assistant", content: error instanceof Error ? error.message : "Une erreur est survenue pendant la recherche. Réessayez.", time: new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }) };
+      setMessages(prev => [...prev, response]);
+    } finally { setLoading(false); }
   }
   function reset() {
     setMessages([{ ...initial, content: `${greeting} Je suis SANTÉ+, votre assistant d'information santé. Comment puis-je vous aider ?` }]);
@@ -146,17 +158,18 @@ export default function Home() {
             <div className="messages">
               {messages.map((m) => <article className={`message-row ${m.role}`} key={m.id}>
                 {m.role === "assistant" ? <div className="message-avatar"><Activity size={17}/></div> : <div className="user-avatar">V</div>}
-                <div className="message-content"><div className="message-meta"><strong>{m.role === "assistant" ? "SANTÉ+" : "Vous"}</strong><time>{m.time}</time></div><div className="bubble">{m.content}</div></div>
+                <div className="message-content"><div className="message-meta"><strong>{m.role === "assistant" ? "SANTÉ+" : "Vous"}</strong><time>{m.time}</time></div><div className="bubble">{m.content}</div>{m.sources?.length ? <div className="message-sources"><strong>Sources consultées</strong>{m.sources.map(source => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.title}</a>)}</div> : null}</div>
               </article>)}
+              {loading && <article className="message-row assistant"><div className="message-avatar"><Activity size={17}/></div><div className="message-content"><div className="message-meta"><strong>SANTÉ+</strong><time>Recherche en cours</time></div><div className="bubble">Recherche de sources biomédicales fiables et préparation de la réponse…</div></div></article>}
               <div ref={bottomRef}/>
             </div>
 
             <div className="composer-wrap">
               <form className="composer" onSubmit={e => { e.preventDefault(); send(); }}>
-                <textarea value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }} placeholder="Posez votre question sur la santé..." rows={1} aria-label="Votre question"/>
-                <button className="send-button" type="submit" disabled={!input.trim()} aria-label="Envoyer"><ArrowUp size={19}/></button>
+                <textarea value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }} placeholder="Posez votre question sur une analyse biomédicale..." rows={1} aria-label="Votre question"/>
+                <button className="send-button" type="submit" disabled={!input.trim() || loading} aria-label="Envoyer"><ArrowUp size={19}/></button>
               </form>
-              <div className="composer-foot"><span><ShieldCheck size={13}/> Évitez de partager des informations personnelles ou médicales identifiantes.</span><span>Entrée pour envoyer · Maj + Entrée pour une ligne</span></div>
+              <div className="composer-foot"><span><ShieldCheck size={13}/> Évitez de partager des informations personnelles ou médicales identifiantes.</span><span>Recherche documentaire · Sources affichées sous la réponse</span></div>
             </div>
           </div>
         </div>
