@@ -1,0 +1,11 @@
+"use client";
+import { FormEvent, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { createClient } from "@/lib/supabase/client";
+
+export default function LoginPage() {
+  const router=useRouter(); const [email,setEmail]=useState(""); const [password,setPassword]=useState(""); const [error,setError]=useState(""); const [busy,setBusy]=useState(false);
+  async function submit(e:FormEvent){e.preventDefault();setBusy(true);setError("");try{const supabase=createClient();const {error}=await supabase.auth.signInWithPassword({email,password});if(error)throw error;router.push("/dashboard");router.refresh();}catch(err){setError(err instanceof Error?err.message:"Connexion impossible.");}finally{setBusy(false);}}
+  return <main className="portal"><section className="portal-card"><a className="portal-brand" href="/">SANTÉ<span>+</span></a><p className="portal-kicker">ESPACE PROFESSIONNEL</p><h1>Connexion</h1><p className="portal-muted">Accédez à votre espace médecin ou administrateur.</p><form onSubmit={submit} className="portal-form"><label>Adresse e-mail<input type="email" autoComplete="email" required value={email} onChange={e=>setEmail(e.target.value)}/></label><label>Mot de passe<input type="password" autoComplete="current-password" required value={password} onChange={e=>setPassword(e.target.value)}/></label>{error&&<p className="portal-error">{error}</p>}<button disabled={busy}>{busy?"Connexion…":"Se connecter"}</button></form><p className="portal-muted">Pas encore de compte ? <Link href="/register">Créer un compte</Link></p><Link href="/" className="portal-back">← Retour au chatbot public</Link></section></main>;
+}
