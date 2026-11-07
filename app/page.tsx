@@ -33,7 +33,7 @@ export default function Home() {
     (async () => {
       try {
         const { data: { user } } = await createClient().auth.getUser();
-        if (!user) { router.replace("/login"); return; }
+        if (!user) { router.replace("/login?next=/"); return; }
         if (active) setAuthChecked(true);
       } catch {
         router.replace("/login");
@@ -104,7 +104,7 @@ export default function Home() {
         <button className="side-link" onClick={() => setShowAbout(true)}><Info size={17}/> À propos de SANTÉ+</button>
         <div className="sidebar-bottom">
           <div className="privacy-card"><ShieldCheck size={19}/><div><strong>Votre confidentialité</strong><p>Votre historique et la base de réponses sont utilisés localement par cette application. Aucune clé OpenAI ni recherche externe ne sont nécessaires.</p></div></div>
-          <div className="profile"><div className="avatar">S+</div><div><strong>{prefs.displayName || "Visiteur"}</strong><small>Session locale</small></div><button aria-label="Ouvrir les préférences" onClick={() => setMenuOpen(!menuOpen)}><Menu size={18}/></button></div>
+          <div className="profile"><div className="avatar">S+</div><div><strong>{prefs.displayName || "Compte connecté"}</strong><small>Session sécurisée</small></div><button aria-label="Ouvrir les préférences" onClick={() => setMenuOpen(!menuOpen)}><Menu size={18}/></button></div>
         </div>
       </aside>
 
@@ -116,7 +116,7 @@ export default function Home() {
             <span className="safe-label"><ShieldCheck size={15}/> Base locale</span>
             <button className="icon-button" title="Nouvelle conversation" onClick={reset}><RotateCcw size={17}/></button>
             <button className="icon-button" title="À propos" onClick={() => setShowAbout(true)}><Info size={17}/></button>
-            <Link className="portal-login-link" href="/login">Espace médecin</Link>
+            <Link className="portal-login-link" href="/dashboard">Mon espace</Link>
           </div>
         </header>
 
